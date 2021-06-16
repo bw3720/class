@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	
+</style>
+<script type="text/javascript">
+	//지역변수
+	//1. 선언
+	var name1;
+	var age;
+	//값 할당하지 않은 변수를 출력하면 undefined가 출력된다.
+	//ECMAScript 262edition 6에서는 name이라는 변수명은 전역변수로 사용된다.
+	alert(name1);
+	
+	//2. 값할당 : 데이터형이 결정된다.
+	age=1;
+	alert(typeof(age));
+	name = "강인섭";
+	age=26;
+	age="월요일 입니다.";
+	alert(typeof(age));
+	
+	//3. 값사용.
+	document.write("이름 :"+name+"<br/>");
+	document.write("나이 :"+age);
+	
+	////전역변수
+	//1. 선언 및 값 할당.
+	addr="서울시 강남구 역삼동";
+	//2. 값 할당
+	addr="서울시 동대문구 동대문동";
+	
+	//3. 값 사용
+	document.write("<br/>주소 :"+addr);
+	
+	function useVariable() {
+		alert("지역변수 :"+name+", 전역변수 : "+addr);
+	}//useVariable
+	
+	function createVariable() {
+		//함수안에서 지역변수가 선언되면 함수 안에서만 사용된다.
+		var loc="지역변수";
+		//함수안에서 전역변수가 선언되더라도 함수 밖에서도 사용된다.
+		glo="전역변수";
+		
+		alert("지역:"+loc+", 전역:"+glo);
+	}//createVariable
+	
+	function useLoc() {
+		//다른 함수 안에서의 지역변수는 사용할 수 없다
+		alert("지역변수 :"+loc);
+	}//useLoc
+	
+	function useGlo() {
+		//다른 함수 안에서의 전역변수는 사용할 수 있다
+		alert("전역변수 :"+glo);
+	}//useGlo
+	
+</script>
+</head>
+<body>
+	<br/>
+	<input type="button" value="변수사용" class="btn" onclick="useVariable()"/><br/>
+	<input type="button" value="변수선언" class="btn" onclick="createVariable()"/><br/>  
+	<input type="button" value="지역사용" class="btn" onclick="useLoc()"/><br/>  
+	<input type="button" value="전역사용" class="btn" onclick="useGlo()"/><br/>  
+
+</body>
+</html>

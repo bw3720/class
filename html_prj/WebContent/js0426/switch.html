@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	
+</style>
+<script type="text/javascript">
+	
+	//조를 입력받아 1조라면 
+	var group=prompt("조를 입력해주세요", "1~4");
+	var names="";
+	switch (group) {
+	case "1": names="이하늘 이학민 진재혁 한상민 이상철";break;
+	case "2": names="곽범수 박기범 조혜원 권예원 석지원";break;
+	case "3": names="조영래 유경우 현병호 김다은 이예림";break;
+	case "4": names="강인섭 정은아 송준희 김덕영";break;
+
+	default: names= "해당 조는 존재하지 않습니다.";
+	}	
+	
+	document.write(group+"조의 구성원 : "+names);
+	document.write("<br/>");//줄바꾸기
+	
+	// 혈액형
+	var bloodType=prompt("혈액형을 입력하세요.", "");
+	var type="";
+	switch (bloodType) {
+		case "a":type="images/blood_a.png";break;
+		case "b":type="images/blood_b.png";break;
+		case "o":type="images/blood_o.png";break;
+		case "ab":type="images/blood_ab.png";break;
+		default:type="../common/images/img1.png";
+	}
+	document.write("<div><img src='"+type+"'/></div>");
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	span{color: #ff0000;}
+	td{border-bottom: 1px solid #B9B9B9; border-top: 1px solid #B9B9B9;}
+	#main{margin: 0px auto; border: 1px solid;}
+	#title{text-align: center; font-size: 30px;}
+	#ta{margin: 10px auto; border-bottom: 2px solid #333; border-top: 2px solid #333; border-spacing: 0px;width: 900px}
+	.lb{background-color: #F7E1B9; width: 110px; font-size: 16px;}
+	.rec1{padding-left: 30px;}
+	.tr{height: 45px;}
+	.btbt{text-align: center;}
+</style>
+<script type="text/javascript">
+	
+	function id_popup() {
+		window.open("id_pop.html","idPop","width=410px,height=190px,top="+(window.screenTop+100)+",left="+(window.screenLeft+100));
+	}//idPopup
+	
+	function zipcode_popup() {
+		window.open("zipcode_pop.html","zipPop","width=210px,height=190px,top="+(window.screenTop+100)+",left="+(window.screenLeft+100));
+	}//zipcode_popup
+
+	function checkPass() {
+		var obj = document.frm;
+		var f_pass = obj.pass1.value; 
+		var s_pass = obj.pass2.value; 
+		
+		if(f_pass!=s_pass){
+			alert("비밀번호가 일치하지 않습니다. 비밀번호를 확인해주세요.");
+			obj.pass1.value="";
+			obj.pass2.value="";
+			obj.pass1.focus();
+		}//end if
+	}//checkPass
+	
+	function checkAll() {
+		var obj = document.frm;
+		
+		switch ("") {
+		case obj.id.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.id.focus();break;
+			
+		case obj.pass1.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.pass1.focus();break;
+			
+		case obj.pass2.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.pass2.focus();break;
+			
+		case obj.name.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.name.focus();break;
+			
+		case obj.birth.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.birth.focus();break;
+			
+		case obj.cell.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.cell.focus();break;
+			
+		case obj.email.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.email.focus();break;
+			
+		case obj.gender.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.gender.focus();break;
+			
+		case obj.zipcode.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.zipcode.focus();break;
+			
+		case obj.addr1.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.addr1.focus();break;
+
+		case obj.addr2.value:
+			alert("* 사항은 필수 입력사항입니다.");
+			obj.addr2.focus();break;
+		default : window.location.href="http://sist.co.kr";
+		
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+
+<div id="main">
+<form action="#" name="frm">
+	<div id="title">회원가입</div>
+<table id="ta">
+	<tr class="tr">
+		<td class="lb"><label><span>*</span>아이디</label></td>
+		<td class="rec1"><input type="text" name="id" class="inputBox"/>
+						<input type="button" value="ID중복확인" class="btn" name="idCheck" onclick="id_popup()"/></td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label><span>*</span>비밀번호</label></td>
+		<td class="rec1"><input type="password" class="inputBox" name="pass1"> 비밀번호 확인 <input type="password" class="inputBox" name="pass2" onblur="checkPass()"></td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label><span>*</span>이름</label></td>
+		<td class="rec1"><input type="text" class="inputBox" name="name"></td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label><span>*</span>생일</label></td>
+		<td class="rec1"><input type="text" class="inputBox" name="birth"></td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label>연락처</label></td>
+		<td class="rec1"><input type="text" class="inputBox"></td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label><span>*</span>휴대폰</label></td>
+		<td class="rec1"><input type="text" class="inputBox" name="cell"> <input type="checkbox"> 수신</td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label><span>*</span>이메일</label></td>
+		<td class="rec1"><input type="text" class="inputBox" name="email"> @
+																<select>
+																	<option>선택해주세요.</option>
+																	<option>gmail.com</option>
+																	<option>daum.net</option>
+																	<option>hotmail.com</option>
+																	<option>naver.com</option>
+																	<option>nate.com</option>
+																	<option>직접입력</option>
+																</select> <input type="checkbox"> 수신</td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label><span>*</span>성별</label></td>
+		<td class="rec1"><input type="radio" name="gender"> 남자 <input type="radio" name="gender"> 여자</td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label>소재지</label></td>
+		<td class="rec1"><select>
+							<option>선택해주세요.</option>
+							<option>강원</option>
+							<option>경기</option>
+							<option>경남</option>
+							<option>경북</option>
+							<option>광주</option>
+							<option>대구</option>
+							<option>대전</option>
+							<option>부산</option>
+							<option>서울</option>
+							<option>울산</option>
+							<option>인천</option>
+							<option>전남</option>
+							<option>전북</option>
+							<option>제주</option>
+							<option>충남</option>
+							<option>충북</option>
+							<option>해외</option>
+						</select></td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label><span>*</span>우편번호</label></td>
+		<td class="rec1"><input type="text" class="inputBox" name="zipcode"> <input type="button" value="우편번호 검색" class="btn" onclick="zipcode_popup()"></td>
+	</tr>
+	<tr class="tr">
+		<td class="lb"><label><span>*</span>주소</label></td>
+		<td rowspan="2" class="rec1"><input type="text" class="inputBox" class="addr" name="addr1"><br/>
+									 <input type="text" class="inputBox" class="addr" name="addr2"></td>
+	</tr>
+</table>
+<div class="btbt"><input type="button" value="확인" class="btn" style="width: 85pt;height:35pt; background-color: #04264C;color: white " onclick="checkAll()"/> 
+				  <input type="reset" value="취소" class="btn" style="width: 85pt;height:35pt; background-color: #87888A;color: white "/> </div>
+</form>
+</div>
+
+</body>
+</html>

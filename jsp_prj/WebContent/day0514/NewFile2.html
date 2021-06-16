@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- botstrap -->
+    <link
+      href="./common/bootstrap-3.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- botstrap -->
+    <script src="./common/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- coin-slider -->
+    <script
+      type="text/javascript"
+      src="./common/coin/coin-slider.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="./common/coin/coin-slider-styles.css"
+      type="text/css"
+    />
+    <script type="text/javascript">
+      /* 코인슬라이더 */
+      $(document).ready(function () {
+        $("#mainPoster").coinslider({
+          width: 1920,
+          navigation: false,
+          delay: 1000,
+          height: 774,
+          effect: "straight",
+        });
+      });
+    </script>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-x: hidden;
+      }
+      div {
+        /* border: 1px solid black; */
+      }
+      ul {
+        list-style: none;
+      }
+      #header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        z-index: 2;
+        /* height: 130px; */
+      }
+      #header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0px;
+        border-bottom: 1px solid black;
+      }
+      #header-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* text-align: center; */
+        margin: 0 auto;
+      }
+
+      #header-bottom ul {
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+      }
+      #header-bottom ul li {
+        padding: 0 15px;
+        margin-top: 10px;
+        float: left;
+      }
+
+      /* #header-bottom-table {
+      } */
+      #header-bottom-table tr {
+        width: 15vw;
+      }
+      #left {
+        width: 150px;
+      }
+      #title {
+        font-size: 45px;
+        /* margin-top: 25px; */
+      }
+      #login {
+        /* width: 10vw; */
+        /* padding-top: 21px; 가운데정렬~~ */
+        width: 150px;
+        text-align: center;
+        /* vertical-align: middle; */
+      }
+      #login-a {
+        /* position: sticky; */
+      }
+      #main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      #main-poster {
+        border: 1px solid black;
+        width: 100vw;
+        height: 30vh;
+      }
+      .coin-slider {
+        overflow: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-top">
+        <div id="left"></div>
+        <div id="title"><a href="">D.D.Cinema</a></div>
+        <div id="login">
+          <a href="">로그인</a>
+          <a href="">회원가입</a>
+        </div>
+      </div>
+      <div id="header-bottom">
+        <ul>
+          <li><a href="">예매</a></li>
+          <li><a href="">현재상영작</a></li>
+          <li><a href="">개봉예정작</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="main">
+      <div id="mainPoster">
+        <a href="" target="_blank">
+          <img src="./common/images/Line_1920774.jpg" class="simple-linear" />
+        </a>
+        <a href="" target="_blank">
+          <img src="./common/images/Spiral_1920774.jpg" />
+        </a>
+        <a href="" target="_blank">
+          <img src="./common/images/TheFast_1920774.jpg" />
+        </a>
+        <a href="" target="_blank">
+          <img src="./common/images/Voyagers_1920774.jpg" />
+        </a>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>

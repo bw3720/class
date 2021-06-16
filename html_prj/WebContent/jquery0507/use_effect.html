@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	
+</style>
+<!-- JQuery CDN(Contents Delivery Network) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btnHid").click(function() {
+			$("img").fadeOut(1000,function(){
+				alert("숨김완료");
+			});
+		});//fadeOut
+		
+		$("#btnShow").click(function() {
+			$("img").fadeIn(1000,function(){
+				alert("보이기완료");
+			});
+		});//fadeShow
+		
+		$("#btnShowHid").click(function() {
+			for (var i = 0; i < 10; i++) {
+				$("#img").fadeOut(500).fadeIn(500);
+			}//end for
+		});//
+		
+		$("#btnSlideHid").click(function() {
+			$("#img").slideUp(1000);
+		});
+		
+		$("#btnSlideShow").click(function() {
+			$("#img").slideDown(1000);
+		});
+		
+		$("#btnSlideHidShow").click(function() {
+			$("#img").slideToggle(1000);
+		});
+		
+	});//ready
+</script>
+</head>
+<body>
+	<div>
+	<img src="../common/images/img1.png" id="img"/>
+	</div>
+	<input type="button" value="숨기기" class="inputBox" id="btnHid"/>
+	<input type="button" value="보이기" class="inputBox" id="btnShow"/>
+	<input type="button" value="깜빡이" class="inputBox" id="btnShowHid"/>
+	<input type="button" value="말려서 숨기기" class="inputBox" id="btnSlideHid"/>
+	<input type="button" value="펼쳐서 보이기" class="inputBox" id="btnSlideShow"/>
+	<input type="button" value="말려서/펼쳐서 보이기" class="inputBox" id="btnSlideHidShow"/>
+
+
+</body>
+</html>

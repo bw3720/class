@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복잡한 형태의 테이블 생성하기</title>
+</head>
+<body>
+<strong>칸 합치기</strong>
+<table border="1" width="300" height="300">
+<tr>
+	<td colspan="2">1</td> <!-- <td>2</td> --> <td>3</td>		
+</tr>
+<tr>
+	<td>4</td> <td colspan="2">5</td> <!-- <td>6</td> -->		
+</tr>
+<tr>
+	<td colspan="3">7</td> <!-- <td>8</td> <td>9</td> -->		
+</tr>
+</table>
+
+<hr/>
+<strong>행 합치기</strong>
+<table border="1" width="300" height="300">
+<tr>
+	<td rowspan="2">1</td> <td>2</td> <td rowspan="3">3</td>		
+</tr>
+<tr>
+	<!-- <td>4</td> --> <td rowspan="2">5</td> <!-- <td>6</td> -->		
+</tr>
+<tr>
+	<td>7</td> <!-- <td>8</td> --> <!-- <td>9</td> -->
+</tr>
+</table>
+
+<hr/>
+<strong>행 합치기</strong>
+<table border="1" width="300" height="300">
+<tr>
+	<td colspan="2" bgcolor="#3FD2B4"></td>  <td rowspan="2" bgcolor="#49C85B"></td>		
+</tr>
+<tr>
+	<td rowspan="2" bgcolor="#2DC2DA"></td> <td></td>
+</tr>
+<tr>
+	 <td colspan="2" bgcolor="#0E8ADB"></td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	fieldset{border: 1px solid #333; width: 500px; height: 500px;}
+</style>
+<script type="text/javascript">
+	//form을 사용한 값얻기
+	function getValue() {
+		//1. 공통의 부분 변수로 저장
+		var obj= document.frm;
+		
+		//2. Form Control에 접근하여 값 얻기.
+		var txt=obj.txt.value;//<input type="text"/>
+		var pass=obj.pass.value;//<input type="password"/>
+		var chk=obj.flag.value;//<input type="checkbox"/> checkbox가 value속성을 가지지 않은 경우 체크한 상태면 on이 
+							   //back-end로 넘어가고, 체크하지 않은 상태면 back-end로 값이 넘어가지 않는다
+		var hidden=obj.hid.value;//<input type="hidden"/>
+		var file=obj.file.value;//<input type="file"/>
+		var img=obj.img.src;//<img src="" name="img"/> img태그는 src로 값을 설정하기 때문에 
+							  //설정된 값을 얻을 때에는 value가 아닌 src로 값을 얻는다.
+		var ta=obj.ta.value;//<textarea>
+		
+		/*(유효성 검증)
+		if(txt==""){
+			alert("텍스트는 필수입력");
+			return;
+		}//end if
+		 */
+		console.log("text: "+txt);
+		console.log("password: "+pass);
+		console.log("checkbox: "+chk);
+		console.log("hidden: "+hidden);
+		console.log("file: "+file);
+		console.log("image: "+img);
+		console.log("textarea: "+ta);
+	}//getValue
+
+</script>
+</head>
+<body>
+<form action="#" name="frm">
+<fieldset>
+	<legend>name속성에 이름이 하나인 Form Control의 값 얻기</legend>
+	<div>
+		<label>text</label><input type="text" name="txt" class="inputBox"/><br/>
+		<label>password</label><input type="password" name="pass" class="inputBox"/><br/>
+		<label>checkbox</label><input type="checkbox" name="flag" value="선택" class="inputBox"/><br/>
+		<label>hidden</label><input type="hidden" name="hid" value="숨겨서 값 넘김!"/><br/>
+		<label>file</label><input type="file" name="file"/><br/>
+		<label>이미지</label><img src="../common/images/img1.png" name="img"/><br/>
+		<label>textarea</label><textarea name="ta" class="inputBox" style="width: 300px; height: 50px"></textarea><br/>
+		<input type="button" value="값 얻기" class="btn" onclick="getValue()"/><br/>
+	</div>
+</fieldset>
+
+</form>
+
+</body>
+</html>

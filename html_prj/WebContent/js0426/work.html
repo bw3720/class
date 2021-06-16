@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	#main{width: 400px; height: 250px;border: 2px solid #dfdfdf;}
+	#title{text-align: center;width: 350px;height: 30;font-family: 고딕,sans-serif; font-weight: bold;}
+	#ta{ width: 350px;height: 250; font-size: 10px; border-spacing: 0px;}
+	th,td{text-align: center; font-size: 10px; font-weight:bold; border-bottom: 2px solid #dfdfdf;}
+	
+	#reser{width: 350px;height: 30px;font-family: 고딕,sans-serif; font-weight: bold; position: relative; vertical-align: middle;}
+	#date{width: 75px;height: 30px; font-size: 8px; position: absolute;left: 10px}
+	#day{width: 140px;height: 30px; font-size: 8px;position: absolute;left: 95px}
+	#time{width: 145px;height: 30px; font-size: 8px;position: absolute;left: 250px}
+	
+	.inp{width: 60px;height: 20px;}
+</style>
+</head>
+<body>
+
+<div id="main">
+	<div id="title"><input type="button" value="<"/>2021년 04월<input type="button" value=">"/></div>
+	<table id="ta">
+		<tr>
+			<th><font color="red">Su</font></th>
+			<th>Mo</th>
+			<th>Tu</th>
+			<th>We</th>
+			<th>Th</th>
+			<th>Fr</th>
+			<th><font color="skyblue">Sa</font></th>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>01</td>
+			<td>02</td>
+			<td>03</td>
+		</tr>
+		<tr>
+			<td>04</td>
+			<td>05</td>
+			<td>06</td>
+			<td>07</td>
+			<td>08</td>
+			<td>09</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>12</td>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+			<td>17</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td>19</td>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td>25</td>
+			<td>26</td>
+			<td>27</td>
+			<td>28</td>
+			<td>29</td>
+			<td>30</td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+<div id="reser">
+	<div id="date"><input type="checkbox"/> 상담 가능 날짜</div>
+	<div id="day">예약선택일<input type="text" class="inp"/>일</div>
+	<div id="time">예약선택시간<input type="text" class="inp"/>시</div>
+</div>
+
+
+</body>
+</html>

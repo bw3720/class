@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	#main{width: 300px; height: 90px; border: 1px solid #333;margin: 200px auto; position: relative;
+	padding: 20px; font-weight: bold;}
+	label{border : 1px solid #333; text-align: center;font-size: 14px;width: 65px;height: 30px;}
+	
+	#la1{position: absolute; top: 20px;left: 15px;}
+	#name{position: absolute; top: 20px;left: 95px;}
+	#la2{position: absolute; top: 70px;left: 15px;}
+	#ssn{position: absolute; top: 70px;left: 95px;}
+	#bt{position: absolute;top: 20px;left: 275px;width: 50px;height: 80px;
+		 background-color: #7ECBBF;}
+</style>
+<script type="text/javascript">
+	function getValue() {
+		var obj=document.frm;
+		
+		var name=obj.name.value;
+		var ssn=obj.ssn.value;
+		
+		if(name==""){
+			alert("이름을 입력해주세요.");
+			return;
+		}//end if(이름 빈칸)
+			
+		if(!(ssn.length==14)){
+			alert("주민번호는 14자리여야 합니다.");
+			return;
+		}//end if(주민번호 자릿수)
+			
+		if(!((ssn.indexOf("-"))==6)){
+			alert("주민번호 입력시 '-'을 넣어주세요.")
+		}
+		
+		if(ssn.charAt(7)==1||ssn.charAt(7)==2||ssn.charAt(7)==5||ssn.charAt(7)==6){
+			var birth= parseInt("19"+ssn.substr(0, 2));
+		}else{
+			var birth= parseInt("20"+ssn.substr(0, 2));
+		}//end else(1900년대생 2000년대생)
+		
+		if(ssn.charAt(7)==1||ssn.charAt(7)==3||ssn.charAt(7)==5||ssn.charAt(7)==7){
+			var gender= "남자";
+		}else{
+			var gender= "여자";
+		}//end else(성별 구하기)
+		
+		if(ssn.charAt(7)==5||ssn.charAt(7)==6||ssn.charAt(7)==7||ssn.charAt(7)==8){
+			var country= "외국인";
+		}else{
+			var country= "내국인";
+		}//end else(내국인|외국인 구하기)
+		
+		//주민 번호 유효성 검증//
+		var month=ssn.substring(2, 4);
+		var day=ssn.substring(4, 6);
+		var age=2021-birth;
+		
+		var ssn = ssn.replace("-", ""); 
+		var ssn1 = ssn.substr(0,6);
+		var ssn2 = ssn.substr(6,7)
+
+		var n = 2; 
+		var sum = 0;
+			
+		for (var i = 0; i < ssn1.length; i++){
+			sum += parseInt(ssn1.substr(i, 1)) * n++; 
+			} 
+		for (var i = 0; i < ssn2.length - 1; i++) {
+			sum += parseInt(ssn2.substr(i, 1)) * n++; 
+			if (n == 10){
+				n = 2; 
+				} 
+			} 
+			
+		var checkSum = 11 - sum % 11;
+		if (checkSum == 11){
+			checkSum = 1; 
+			} 
+		if (checkSum == 10){
+			checkSum = 0; 
+			} 
+		if (checkSum != parseInt(ssn2.substr(6, 1))){
+			var result="비정상 번호"; 
+		}else{
+			var result="정상 번호"; 
+		} 
+			
+		
+		switch (birth % 12) {//띠를 구하려면 태어난해를 12로 나눈 나머지 사용 .0~11까지의 수 발생.
+			case 0 : var zodiac="원숭이띠"; break;
+			case 1 : var zodiac="닭띠"; break;
+			case 2 : var zodiac="개띠"; break;
+			case 3 : var zodiac="돼지띠"; break;
+			case 4 : var zodiac="쥐띠"; break;
+			case 5 : var zodiac="소띠"; break;
+			case 6 : var zodiac="호랑이띠"; break;
+			case 7 : var zodiac="토끼띠"; break;
+			case 8 : var zodiac="용띠"; break;
+			case 9 : var zodiac="뱀띠"; break;
+			case 10 : var zodiac="말띠"; break;
+		default : var zodiac="양띠"; break;
+		}
+		
+		alert("생년월일 : "+birth+"-"+month+"-"+day+"\n"+
+			  "나이 : "+age+"\n"+
+			  "성별 : "+gender+"\n"+
+			  "외국인 여부 :"+country+"\n"+
+			  "띠 :"+zodiac+"\n"+
+			  "주민번호유효성 : "+result);
+		
+	}//getValue
+	
+</script>
+</head>
+<body>
+<form action="#" name="frm">
+<div id="main">
+	<label id="la1">이름</label> <input type="text" name="name" id="name" class="inputBox"/><br/>
+	<label id="la2">주민번호</label> <input type="password" name="ssn" id="ssn" class="inputBox"/><br/>
+	<input type="button" value="입력" id="bt" onclick="getValue()"/>
+</div>
+</form>
+
+
+</body>
+</html>

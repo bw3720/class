@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	
+</style>
+<!-- JQuery CDN(Contents Delivery Network) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btnSetValue").click(function() {
+			//$("[name='txt']").val("오늘은 금요일");
+			$("#txt").val("오늘은 금요일");
+			$("#pass").val("오늘은 금요일");
+			$("#hid").val("오늘은 금요일");
+			//$("#file").val("c:/dev/eclipse.bat"); //파일은 value를 설정 할 수 없다.
+			//$("#img").val("../common/images/img2.png");//img는 value로 변경할수없다.
+			//img는 attr함수로 src속성을 변경하여 로딩된 이미지를 변경해준다.
+			$("#img").attr("src","../common/images/img2.png");
+			$("#ta").val("오늘은 금요일\n내일은 퇼");
+			
+		});//click
+		
+		//상태변환
+		$("#btnSetStatus").click(function() {
+			//체크박스
+			$("#java").attr("checked",true);
+			$("#python").attr("checked",true);
+			
+			//라디오버튼
+			//$("#m").attr("checked",true);
+			$("#f").prop("checked",true);  //attr와 prop 차이 : attr 속성은 한번만 변경가능, prop함수는 여러번 변경가능.
+			
+			//select
+			$("#ktf").prop("selected",true);
+		});//click
+		
+	});//ready
+</script>
+</head>
+<body>
+<div>
+<form action="#" name="frm">
+<strong>값 변경</strong>
+	<div>
+	<label>text</label><input type="text" class="inputBox" name="txt" id="txt"/><br/>
+	<label>password</label><input type="password" class="inputBox" name="pass" id="pass"/><br/>
+	<label>hidden</label><input type="hidden" name="hid" id="hid"/><br/>
+	<label>file</label><input type="file" name="file" id="file"/><br/>
+	<img src='../common/images/img1.png' name="img" id="img"/><br/>
+	<label>textarea</label>
+	<textarea class="inputBox" style="width: 300px;height: 80px;" name="ta" id="ta"></textarea><br/>
+	
+	<input type="button" value="값 설정" class="btn" id="btnSetValue"/>
+	</div>
+	
+<strong>상태 변경</strong>
+	<div>
+	<label>언어선택</label>
+		<input type="checkbox" name="lang" value="Java" id="java"/>Java
+		<input type="checkbox" name="lang" value="C/C++" id="c"/>C/C++
+		<input type="checkbox" name="lang" value="VB" id="vb"/>VB
+		<input type="checkbox" name="lang" value="Python" id="python"/>Python
+		<br/>
+		<input type="radio" name="gender" value="남자" id="m"/>남자
+		<input type="radio" name="gender" value="여자" id="f"/>여자
+		<br/>
+		<select name="company">
+			<option>---선택---</option>
+			<option value="SKT" id="skt">SKT</option>
+			<option value="KTF" id="ktf">KTF</option>
+			<option value="LGT" id="lgt">LGT</option>
+		</select>
+		<br/>
+		<input type="button" value="설정" class="btn" id="btnSetStatus"/>
+	</div>
+</form>
+</div>
+
+<div>
+
+</div>
+
+</body>
+</html>

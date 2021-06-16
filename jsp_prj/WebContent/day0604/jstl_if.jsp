@@ -1,0 +1,56 @@
+<%@page import="java.util.Random"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%
+    //관리자로 로그인했다면 "관리자!"를 보여줄때
+    if(new Random().nextBoolean()){
+    	//예를 들어 관리자가 로그인 했다면 세션에 정보 추가
+    	session.setAttribute("admin_flag", "admin");
+    }//end if
+    
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- botstrap -->
+    <link href="http://localhost/jsp_prj/common/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    <!-- botstrap -->
+    <script src="http://localhost/jsp_prj/common/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+    
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+
+<div>
+	<a href="jstl_if.jsp?flag=true">클릭</a>
+
+	<div>
+		<%-- <c:if test="${ param.flag eq null }"> --%>
+		<!-- EL에서는 비었는 지? 비교할 때 empty를 사용 -->
+		<c:if test="${ empty param.flag }">
+		<span style="color: #FF0000">위의 링크를 클릭해 주세요.!!!!</span>
+		</c:if>
+		<c:if test="${ not empty param.flag }">
+		<span style="color: #0000FF">위의 링크를 클릭하셨습니다.</span>
+		</c:if>
+	</div>
+	<a href="job.jsp">작업페이지</a>
+</div>
+
+</body>
+</html>

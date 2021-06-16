@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.139/html_prj/common/css/main.css"/>
+<style type="text/css">   
+</style>
+<script type="text/javascript">
+
+//이름이 있는 기명함수.
+function test(){
+   alert("함수호출");
+}//test
+
+//함수의 호출
+//test();
+
+</script>
+<script type="text/javascript">
+//script 태그가 여러개 정의되더라도 같은 JavaScript영역이다.
+//test();
+</script>
+</head>
+<!-- <body onload="test()"> onload는 body에서만 사용가능하다. -->
+<body>
+<!-- HTML 영역 JavaScript영역을 사용할 때에는 onXXX 속성을 사용한다.-->
+<div>
+<input type="button" value="클릭" class="btn" onclick="test()"/>
+</div>
+마우스 포인터가 올라왔을 때
+<img src="../common/images/img1.png" style="border: 1px solid #333" onmouseover="test()"/>
+<br/>
+
+마우스 포인터가 빠져나갔을 때
+<img src="../common/images/img1.png" style="border: 1px solid #333" onmouseout="test()"/>
+<br/>
+
+키가 눌렸을 때 <input type="text" onkeydown="test()"/></br>
+키가 올라올 때 <input type="text" onkeyup="test()"/><br/>
+다른 옵션이 선택 되었을 때
+<select onchange="test()">
+   <option>A</option>
+   <option>B</option>
+   <option>C</option>
+</select><br/>
+
+커서가 들어갔을 때의 값과 커서가 빠져나갔을 때의 값이 다르면
+<input type="text" onchange="test()"/><br/>
+커서가 나갔을 때<input type="text" onblur="test()"/><br/>
+더블클릭 <input type="button" value="더블클릭" class="btn" ondblclick="test()"/><br/>
+<a onclick="test()">클릭</a><br/>
+
+<!-- <a href="test()">클릭</a> href=속성은 HTML페이지를 호출하기위한 영역이므로
+                                    javascript함수를 호출 할 수 없다.-->
+                                    
+<a href="javascript:test()">클릭</a>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 입력 값 받기</title>
+</head>
+<body>
+
+<form action="test.jsp">
+	<input/><br/>
+	<label>text</label>
+	<input type="text" name="name" value="보여줄 값" size="10" maxlength="15"/><br/>
+	<label>password</label>
+	<input type="password" name="pass" size="10" maxlength="15"/><br/>
+	<label>readonly</label>
+	<input type="text" name="r" value="보여줄 값" readonly="readonly"/><br/>
+	<label>disabled</label>
+	<input type="text" name="d" value="보여줄 값" disabled="disabled"/><br/>
+	<label>checkbox</label>
+	<input type="checkbox" name="c" value="음악듣기"/>음악 감상<br/>
+	<input type="checkbox" name="c" value="유튜브"/>영화 감상<br/>
+	<input type="checkbox" name="c" value="자바코딩" checked="checked"/>코딩<br/>
+	<label>radio</label>
+	<input type="radio" name="gender" value="M" checked="checked"/>남자<br/>
+	<input type="radio" name="gender" value="F"/>여자<br/>
+	<label>hidden</label>
+	<input type="hidden" name="addr" value="서울시 강남구 역삼동"/><br/>
+	<label>file</label> <!-- file은 value속성으로 form control에 값을 설정할 수 없다. -->
+	<input type="file" name="upfile"/><br/>
+	<label>전송버튼</label>
+	<input type="submit" value="전송"/><br/>
+	<label>취소버튼</label>
+	<input type="reset" value="초기화"/><br/>
+	<label>버튼모양</label>
+	<input type="button" value="클릭"/><br/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!-- XML주석 -->
+	<msg>hello 1</msg>
+	<msg>hello 2</msg>
+	<msg>hello 3</msg>
+	<msg>hello 4</msg>
+	<msg1>hello 5</msg1>
+	<msg></msg>
+</root>

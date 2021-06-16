@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	
+</style>
+<script type="text/javascript">
+	function moveSite( sel ) {
+		if( sel.selectedIndex !=0 ){//URL선택이 아닌 경우에 이동
+			if(confirm(sel.value+"으로 이동하시겠습니까?")){
+				//location.href="http://"+sel.value;	//뒤로가기 가능			
+				location.replace("http://"+sel.value);	//뒤로가기 불가능			
+			}//end if
+			
+		}//end if
+	}//moveSite
+</script>
+</head>
+<body>
+<select name="url" onchange="moveSite(this)">
+	<option value="N/A">---URL선택---</option>
+	<option value="daum.net">다음</option>
+	<option value="naver.com">네이버</option>
+	<option value="google.com">구글</option>
+	<option value="nate.com">네이트</option>
+	<option value="sist.co.kr">쌍용교육센터</option>
+</select>
+
+</body>
+</html>

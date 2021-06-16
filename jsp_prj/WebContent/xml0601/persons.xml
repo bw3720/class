@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE persons SYSTEM "person.dtd">
+<persons>
+<!-- person은 0~n개 나올수 있다. -->
+	<person>
+		<name>테스트</name> <!-- name은 0~1개 정의 될 수 있다. -->
+		<age></age>
+		<addr></addr>
+		<m></m>
+	</person>
+	<person>
+		<!-- <name>테스트</name> --> <!-- name은 0~1개 정의 될 수 있다. = ? -->
+		<age></age>
+		<addr></addr>
+		<m></m>
+	</person>
+	<person>
+		<name>테스트</name> <!-- name은 0~1개 정의 될 수 있다. = ? -->
+		<age></age> <!-- 1~n개가 정의 될 수 있다. = + -->
+		<age></age> <!-- 1~n개가 정의 될 수 있다. = + -->
+		<age></age> <!-- 1~n개가 정의 될 수 있다. = + -->
+		<addr></addr> <!-- 순서에 맞게 age뒤에 나와야함.  -->
+		<m/> <!-- m과f를 동시에 적을 수는 없다. -->
+	</person>
+</persons>

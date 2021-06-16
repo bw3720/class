@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로또 번호 생성기</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	div{border: 1px solid #333; width: 220px;height: 40px;margin: 50px auto;}
+</style>
+<script type="text/javascript">
+	var lotto= new Array();
+	var num=0;
+	
+	for(var r=0;r<5;r++){
+		
+		for (var i = 0; i < 6; i++) {
+			num=(Math.random()*45+1);
+			lotto[i]=parseInt(num);
+			
+			for(var j=0;j<i;j++){
+				if(lotto[i]==lotto[j]){
+					i--;
+				}//end if
+				
+				if(lotto[i]<lotto[j]){
+					var temp = lotto[i];
+					lotto[i] = lotto[j];
+					lotto[j] = temp;
+				}//end if(오름차순 나열)
+					
+			}//end for(중복 배제)
+		}//end for(숫자 랜덤)
+			
+		
+		document.write("<div>");
+			for (var i = 0; i < 6; i++) {
+				document.write("<img src='lotto/ball_");
+				document.write(lotto[i]);
+				document.write(".png'/>");
+			}//end for(이미지 불러오기)
+		document.write("</div>");
+	}//end for(5세트 뽑기)
+	
+
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

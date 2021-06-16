@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	
+</style>
+<!-- JQuery CDN(Contents Delivery Network) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+	var arr=["박기범","곽범수","김덕영","강인섭"];
+	$(function() {
+		$("#useEach").click(function() {
+			//배열 반복 : index를 사용하여 배열 방의 값을 얻기.
+			//$.each(arr, function(i) {
+			//	alert(arr[i]);
+			//}) 
+			
+			//배열 반복 : index를 사용하지 않고, 배열 방의 값을 변수에 저장하고 얻기.
+			$.each(arr,function(i,name){//무기명 함수의 두번째 매개변수는 배열의 각방의 값이 할당된다.
+				alert(i+"번째 : "+name);
+			});//each
+			
+		});//click
+			
+		//HTML Form Control 배열 처리.
+		$("#useEach1").click(function() {
+				
+			//selector로 찾아낸 같은 이름의 Form Control 반복 처리.
+			$(".chk").each(function(i, check) {
+			//check는 class="chk"인 모든 HTML Form Control을 순차적으로 가져온다.
+			//반복중인 상태에서는 element를 this로 사용할 수 있다.
+				//alert(i+" / "+$(check).val()+" / "+$(this).val());
+				alert($(check).is( ":checked" )+" / "+$(this).is( ":checked" ));
+			});//each
+				
+		});//click
+			
+	});//ready
+</script>
+</head>
+<body>
+<input type="button" value="배열사용" class="btn" id="useEach"/>
+<br/>
+<input type="checkbox" name="hobby" value="낚시" class="chk"/>낚시
+<input type="checkbox" name="hobby" value="등산" class="chk"/>등산
+<input type="checkbox" name="hobby" value="독서" class="chk"/>독서
+<input type="checkbox" name="hobby" value="운동" class="chk"/>운동
+<input type="checkbox" name="hobby" value="음악감상" class="chk"/>음악감상
+<br/>
+<input type="button" value="form control" class="btn" id="useEach1"/>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.141/html_prj/common/css/main.css"/>
+<style type="text/css">
+	#wrap{ width: 900px; height: 1000px; margin: 0px auto;}
+	/* header 시작 */
+		#header{width: 900px; height: 160px; position:relative;
+				background: url("http://211.63.89.141/html_prj/common/images/header.png") #ffffff repeat-x;}
+		#headerTitle{width: 400px; height: 60px; position: absolute; top:50px; left: 250px;
+					 font-weight: bold;font-family: 고딕,godic,sans-serif; font-size: 50px;}
+	/* header 끝 */
+	/* container 시작 */
+		#container{width: 900px; height: 700px;}
+	/* container 끝 */
+	/* footer 시작 */
+		#footer{width: 900px; height: 140px; position:relative;}
+		#footerTitle{width: 450px; height: 30px; float: right; margin-right: 20px; margin-top: 40px;
+					 font-weight: bold;font-family: 고딕,godic,sans-serif; font-size: 20px;}
+	/* footer 끝 */
+	
+</style>
+<script type="text/javascript">
+	
+	window.onload=function(){ //팝업띄울 때
+		//body tag의 정보를 읽어 들인 후에 실행(body와 같이 실행된다고 보면 된다.)
+		//alert(document.frm);
+		//이벤트를 tag와 분리하여 등록시킬 때.
+		
+		window.document.getElementById("btn").addEventListener("click",btnClick);//함수 기호 넣을시 바로 불려짐
+		window.document.getElementById("btn1").addEventListener("click",btnClick);//함수 기호 넣을시 바로 불려짐
+	}
+	
+	function btnClick() {
+		alert("버튼이 클릭되엇음")
+	}
+	
+	function keyValue() {
+		//키가 눌리면 입력된 값을 받기.
+		//keydown은 text에 값이 입력되기전 키를 누르는 상태에서 호출되므로 입력된 값을 받을 수 없다.
+		//keyup은 눌린키가 올라오는 상태에서 호출되므로 입력된 값을 받을 수 있다.
+		
+		var obj=document.frm;
+		alert(obj.txtA.value);
+	}//keyValue
+	
+	
+</script>
+</head>
+<body>
+	
+<div id="wrap">
+	<div id="header">
+		<div id="headerTitle">
+			Class4. Design
+		</div>
+	</div>
+	
+	<div id="container">
+		<form name="frm">
+			<input type="button" value="클릭" id="btn" class="btn"/>
+			<input type="button" value="클릭" id="btn1" class="btn"/><br/>
+			<label>onxxx 처리</label>
+			<input type="text" name="txtA" id="txtA" class="inputBox" onkeyup="keyValue()"/>
+		</form>
+	</div>
+	
+	<div id="footer">
+		<div id="footerTitle">
+			Copyright(C) 2021 Class 4, All Right Reserved.
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
